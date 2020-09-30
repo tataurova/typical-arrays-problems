@@ -1,12 +1,24 @@
-
 exports.min = function min (array) {
-  return 0;
+    let min = array ? array[0] || 0 : 0;
+    array && array.forEach((el) => {
+       if  (el < min) {
+           min = el;
+       }
+    });
+    return min;
 }
 
 exports.max = function max (array) {
-  return 0;
+    let max = array ? array[0] || 0 : 0;
+    array && array.forEach((el) => {
+        if  (el > max) {
+            max = el;
+        }
+    });
+    return max;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+    const average = array && array.length > 0 ? array.reduce((sum, current) => sum + current) / array.length : 0;
+    return average;
 }
